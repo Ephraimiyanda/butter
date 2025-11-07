@@ -110,7 +110,11 @@ export default function WorkshopIllustration() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g ref={(el) => (avatarsRef.current[0] = el)}>
+          <g
+            ref={(el) => {
+              avatarsRef.current[0] = el;
+            }}
+          >
             <circle cx="120" cy="100" r="40" fill="#9B87F5" opacity="0.9" />
             <circle cx="120" cy="87" r="13" fill="#1A1F2C" />
             <path
@@ -119,7 +123,11 @@ export default function WorkshopIllustration() {
             />
           </g>
 
-          <g ref={(el) => (avatarsRef.current[1] = el)}>
+          <g
+            ref={(el) => {
+              avatarsRef.current[1] = el;
+            }}
+          >
             <circle cx="680" cy="110" r="40" fill="#F97316" opacity="0.9" />
             <circle cx="680" cy="97" r="13" fill="#1A1F2C" />
             <path
@@ -128,7 +136,11 @@ export default function WorkshopIllustration() {
             />
           </g>
 
-          <g ref={(el) => (avatarsRef.current[2] = el)}>
+          <g
+            ref={(el) => {
+              avatarsRef.current[2] = el;
+            }}
+          >
             <circle cx="140" cy="400" r="38" fill="#22C55E" opacity="0.9" />
             <circle cx="140" cy="388" r="12" fill="#1A1F2C" />
             <path
@@ -137,7 +149,11 @@ export default function WorkshopIllustration() {
             />
           </g>
 
-          <g ref={(el) => (avatarsRef.current[3] = el)}>
+          <g
+            ref={(el) => {
+              avatarsRef.current[3] = el;
+            }}
+          >
             <circle cx="660" cy="410" r="38" fill="#3B82F6" opacity="0.9" />
             <circle cx="660" cy="398" r="12" fill="#1A1F2C" />
             <path
@@ -146,7 +162,11 @@ export default function WorkshopIllustration() {
             />
           </g>
 
-          <g ref={(el) => (stickyNotesRef.current[0] = el)}>
+          <g
+            ref={(el) => {
+              stickyNotesRef.current[0] = el;
+            }}
+          >
             <rect
               x="50"
               y="230"
@@ -185,7 +205,11 @@ export default function WorkshopIllustration() {
             />
           </g>
 
-          <g ref={(el) => (stickyNotesRef.current[1] = el)}>
+          <g
+            ref={(el) => {
+              stickyNotesRef.current[1] = el;
+            }}
+          >
             <rect
               x="680"
               y="240"
@@ -207,7 +231,11 @@ export default function WorkshopIllustration() {
             />
           </g>
 
-          <g ref={(el) => (stickyNotesRef.current[2] = el)}>
+          <g
+            ref={(el) => {
+              stickyNotesRef.current[2] = el;
+            }}
+          >
             <rect
               x="365"
               y="40"
@@ -222,7 +250,11 @@ export default function WorkshopIllustration() {
             <circle cx="406" cy="67" r="2.5" fill="#A7F3D0" />
           </g>
 
-          <g ref={(el) => (stickyNotesRef.current[3] = el)}>
+          <g
+            ref={(el) => {
+              stickyNotesRef.current[3] = el;
+            }}
+          >
             <path
               d="M170 190 L185 155 L235 163 L220 198 Z"
               fill="#C4B5FD"
@@ -232,7 +264,11 @@ export default function WorkshopIllustration() {
             <circle cx="212" cy="176" r="7" fill="#0A0B1E" />
           </g>
 
-          <g ref={(el) => (avatarsRef.current[5] = el)}>
+          <g
+            ref={(el) => {
+              avatarsRef.current[5] = el;
+            }}
+          >
             <circle cx="600" cy="70" r="32" fill="#FCD34D" opacity="0.9" />
             <path d="M588 66 L600 54 L612 66 L600 78 Z" fill="#0A0B1E" />
           </g>

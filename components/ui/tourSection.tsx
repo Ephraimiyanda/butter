@@ -7,7 +7,7 @@ import { ContentSection } from "./contentSection";
 export default function TourSection({
   wrapperRef,
 }: {
-  wrapperRef: RefObject<HTMLDivElement>;
+  wrapperRef: RefObject<HTMLDivElement | null>;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);

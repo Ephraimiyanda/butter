@@ -7,11 +7,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function CommunityWriteUp() {
   const textRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (!textRef.current) return;
 
-    // Select only text nodes (not existing <span> tags)
+    // Select only text nodes (ignore existing spans)
     const textNodes: ChildNode[] = [];
     const walker = document.createTreeWalker(
       textRef.current,
@@ -21,33 +20,33 @@ export default function CommunityWriteUp() {
     //@ts-ignore
     while ((node = walker.nextNode())) textNodes.push(node);
 
-    // Wrap each letter of text nodes in a span for animation
+    // Wrap each WORD of text nodes in a span for animation
     textNodes.forEach((textNode) => {
       const text = textNode.textContent || "";
       const fragment = document.createDocumentFragment();
 
-      text.split("").forEach((char) => {
+      text.split(" ").forEach((word) => {
         const span = document.createElement("span");
-        span.textContent = char;
+        span.textContent = word + " ";
         span.style.display = "inline-block";
-        if (char === " ") span.style.width = "0.3em";
+        span.style.whiteSpace = "pre"; // preserves spaces naturally
         fragment.appendChild(span);
       });
 
       textNode.parentNode?.replaceChild(fragment, textNode);
     });
 
-    // Animate all letter spans within textRef
-    const letters = textRef.current.querySelectorAll("span");
+    // Animate all word spans within textRef
+    const words = textRef.current.querySelectorAll("span");
 
     gsap.fromTo(
-      letters,
+      words,
       { opacity: 0, y: 20 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.3,
-        stagger: 0.02,
+        duration: 0.4,
+        stagger: 0.05,
         ease: "power2.out",
         scrollTrigger: {
           trigger: textRef.current,

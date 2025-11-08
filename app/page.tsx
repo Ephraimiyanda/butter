@@ -18,14 +18,14 @@ export default function Home() {
         >
           <div className="liquid inset-0 z-10"></div>
 
-          <div className="relative z-10 flex flex-col items-center justify-center gap-6 w-full max-w-[1280px]">
-            <h1 className="text-[clamp(2.0rem,6vw,4.4375rem)] font-black leading-[1.13] text-[#0A0B1E] text-center max-w-[1045px] sm:px-4">
+          <div className="relative z-10 flex flex-col items-center justify-center gap-3 sm:gap-6 w-full max-w-[1280px]">
+            <h1 className="text-3xl sm:text-6xl font-black leading-[1.13] text-[#0A0B1E] text-center max-w-[1045px] sm:px-4">
               Run more engaging sessions.
               <br />
               Get better outcomes.
             </h1>
 
-            <p className="text-[1.50rem] sm:text-[2.0rem] leading-[1.56] font-light text-[#0A0B1E] text-center max-w-[1045px] px-6 mt-2">
+            <p className="text-[1.0rem] sm:text-[2.0rem] leading-[1.56] font-light text-[#0A0B1E] text-center max-w-[1045px] px-6 mt-2">
               Effortlessly plan, run and recap super-engaging workshops,
               trainings, and meetings with Butter's built-in agenda planner,
               integrated collaboration tools and auto-generated recaps—all in

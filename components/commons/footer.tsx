@@ -3,14 +3,14 @@ export default function Footer() {
     <footer className="bg-[#0A0B1E] px-6 sm:px-12 lg:px-[93px] py-16">
       <div className="flex flex-col gap-12 text-white mb-[120px]">
         <div className="flex flex-col gap-8">
-          <p className="font-bold text-6xl">
+          <p className="font-bold text-3xl sm:text-4xl">
             Ready to run buttery-smooth virtual sessions?
           </p>
-          <p className="text-6xl font-light">
+          <p className="text-3xl sm:text-4xl font-light">
             It’s time to experience Butter for yourself!
           </p>
         </div>
-        <button className="bg-white font-bold text-4xl text-center rounded-[3rem] h-28 text-black hover:shadow hover:bg-gray-100">
+        <button className="bg-white font-bold text-lg sm:text-2xl text-center rounded-[3rem] h-18 lg:h-28 text-black hover:shadow hover:bg-gray-100">
           Get started for free
         </button>
       </div>

@@ -11,7 +11,7 @@ export default function FacilitateHeader() {
   useEffect(() => {
     if (!textRef.current) return;
 
-    // Select only text nodes (not existing <span> tags)
+    // Select only text nodes (ignore existing spans)
     const textNodes: ChildNode[] = [];
     const walker = document.createTreeWalker(
       textRef.current,
@@ -21,33 +21,33 @@ export default function FacilitateHeader() {
     //@ts-ignore
     while ((node = walker.nextNode())) textNodes.push(node);
 
-    // Wrap each letter of text nodes in a span for animation
+    // Wrap each WORD of text nodes in a span for animation
     textNodes.forEach((textNode) => {
       const text = textNode.textContent || "";
       const fragment = document.createDocumentFragment();
 
-      text.split("").forEach((char) => {
+      text.split(" ").forEach((word) => {
         const span = document.createElement("span");
-        span.textContent = char;
+        span.textContent = word + " ";
         span.style.display = "inline-block";
-        if (char === " ") span.style.width = "0.3em";
+        span.style.whiteSpace = "pre"; // preserves spaces naturally
         fragment.appendChild(span);
       });
 
       textNode.parentNode?.replaceChild(fragment, textNode);
     });
 
-    // Animate all letter spans within textRef
-    const letters = textRef.current.querySelectorAll("span");
+    // Animate all word spans within textRef
+    const words = textRef.current.querySelectorAll("span");
 
     gsap.fromTo(
-      letters,
+      words,
       { opacity: 0, y: 20 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.3,
-        stagger: 0.02,
+        duration: 0.4,
+        stagger: 0.05,
         ease: "power2.out",
         scrollTrigger: {
           trigger: textRef.current,
@@ -64,11 +64,11 @@ export default function FacilitateHeader() {
         className="text-[1.5rem] sm:text-[2rem] leading-[1.3] text-[#0A0B1E]"
       >
         <span className="font-bold">
-          All your team's facilitation tools in one place.{" "}
+          All your team's facilitation tools in one place.
         </span>
         <span>
           Stop hosting snoozefests. Start collaborating effectively. Butter
-          brings structure,{" "}
+          brings structure,
         </span>
         <span className="bg-[#FFFD63]">energy, and joy</span>
         <span> to your meetings, workshops, and training sessions.</span>
